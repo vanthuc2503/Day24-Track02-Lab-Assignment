@@ -1,23 +1,28 @@
+# src/access/policy.csv
 # Format: p, role, resource, action
 p, admin, patient_data, read
 p, admin, patient_data, write
 p, admin, patient_data, delete
 p, admin, model_artifacts, read
 p, admin, model_artifacts, write
+p, admin, training_data, read
+p, admin, aggregated_metrics, read
+p, admin, reports, read
+p, admin, reports, write
 
 p, ml_engineer, training_data, read
 p, ml_engineer, model_artifacts, read
 p, ml_engineer, model_artifacts, write
-# TODO: ml_engineer KHÔNG được delete production data
-# TODO: ml_engineer KHÔNG được đọc raw PII
+# ml_engineer KHÔNG được delete production data (xem model.conf matcher)
+# ml_engineer KHÔNG được đọc raw PII (không có patient_data)
 
 p, data_analyst, aggregated_metrics, read
 p, data_analyst, reports, write
-# TODO: data_analyst KHÔNG được đọc raw PII
+# data_analyst KHÔNG được đọc raw PII (không có patient_data)
 
 p, intern, sandbox_data, read
 p, intern, sandbox_data, write
-# TODO: intern KHÔNG được access production
+# intern KHÔNG được access production (không có patient_data)
 
 # Role inheritance
 g, alice, admin

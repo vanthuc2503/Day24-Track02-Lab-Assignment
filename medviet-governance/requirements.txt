@@ -1,14 +1,28 @@
-presidio-analyzer>=2.2.0
-presidio-anonymizer>=2.2.0
-spacy>=3.5.0
+# requirements.txt
+# MedViet Data Governance - Dependencies
+# Regex-only PII Detection (no AI/ML models)
+
+# Data Processing
 faker>=18.0.0
 pandas>=2.0.0
+
+# RBAC with Casbin
 casbin>=1.17.0
+
+# FastAPI
 fastapi>=0.100.0
 uvicorn>=0.22.0
+python-multipart>=0.0.6
+
+# Encryption
 cryptography>=41.0.0
+
+# Data Quality Validation
 great-expectations>=0.17.0
+
+# Testing
 pytest>=7.0.0
+
+# Security Scanning
 bandit>=1.7.0
 pip-audit>=2.5.0
-python-multipart>=0.0.6
